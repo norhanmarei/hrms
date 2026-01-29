@@ -17,7 +17,7 @@ namespace HRMS.Domain.Entities
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
         public bool IsActive { get; set; } = true;
-        public string EmployeeNumber { get; set; } = string.Empty;
+        public string? EmployeeNumber { get; set; } = string.Empty;
         public int? ManagerId { get; set; }
         public Employee? Manager { get; set; }
         public ICollection<Employee> Subordinates { get; set; } = new List<Employee>();
