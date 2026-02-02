@@ -1,0 +1,13 @@
+CREATE TABLE WorkSchedules (
+    Id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Description VARCHAR(255),
+
+    IsActive BOOLEAN DEFAULT TRUE,
+
+    CreatedAt TIMESTAMP WITH TIME ZONE DEFAULT now(),
+    UpdatedAt TIMESTAMP WITH TIME ZONE DEFAULT now(),
+
+    CONSTRAINT uq_workschedules_name
+        UNIQUE (Name)
+);
