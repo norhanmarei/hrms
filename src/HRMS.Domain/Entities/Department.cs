@@ -2,12 +2,19 @@ using System;
 using HRMS.Domain.Common;
 namespace HRMS.Domain.Entities
 {
-    public class Department : AuditableEntity
+    public class Department
     {
-        public string Name { get; set; } = string.Empty;
-        public string? Description { get; set; }
-        public int? ParentDepartmentId { get; set; }
-        public Department? ParentDepartment { get; set; }
-        public ICollection<Department> SubDepartments { get; set; } = new List<Department>();
+        public int Id { get; set; }
+        public string Name { get; set; } 
+        public bool IsActive { get; set; }
+        public Department() { }
+        public Department(string name)
+        {
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                Name = name.Trim();
+                IsActive = true;
+            }
+        }
     }
 }
